@@ -1,6 +1,6 @@
 import React from 'react'
-import { ACTIONS } from './App'
-import './styles.scss'
+import { ACTIONS } from '../App'
+import '../styles.scss'
 
 const OperationButton = ({ dispatch, operation }) => {
     return (
@@ -11,7 +11,7 @@ const OperationButton = ({ dispatch, operation }) => {
                     payload: { operation },
                 })
             }
-            className='operations'
+            className='operations button'
         >
             {operation}
         </button>
