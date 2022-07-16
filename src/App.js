@@ -1,5 +1,5 @@
 import { useReducer } from 'react'
-import './styles.css'
+import './styles.scss'
 import DigitButton from './DigitButton'
 import OperationButton from './OperationButton'
 
@@ -160,16 +160,16 @@ function App() {
 
     return (
         <div className='calculator-grid'>
-            <div className='output'>
-                <div className='previous-operand'>
+            <div className='calculator-grid__output'>
+                <div className='calculator-grid__output_previous-operand'>
                     {formatOperand(previousOperand)} {operation}
                 </div>
-                <div className='current-operand'>
+                <div className='calculator-grid__output_current-operand'>
                     {formatOperand(currentOperand)}
                 </div>
             </div>
             <button
-                className='span-two'
+                className='calculator-grid__span-two'
                 onClick={() => dispatch({ type: ACTIONS.CLEAR })}
             >
                 AC
@@ -193,7 +193,7 @@ function App() {
             <DigitButton digit='.' dispatch={dispatch} />
             <DigitButton digit='0' dispatch={dispatch} />
             <button
-                className='span-two'
+                className='calculator-grid__span-two equal'
                 onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
             >
                 =
