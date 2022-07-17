@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
-import { Form, ProgressBar, Alert, Button } from 'react-bootstrap'
+import { Form, Alert, Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import { STEP_4, STEP_5, STEP_6 } from '../consts/paths'
+import { STEP_4, STEP_5 } from '../consts/paths'
 
 const Step3 = () => {
     const navigate = useNavigate()
@@ -15,16 +15,15 @@ const Step3 = () => {
             navigate(STEP_4)
         }
         if (ref2.current.checked === true) {
-            navigate(STEP_5)
+            navigate(STEP_4)
         }
         if (ref3.current.checked === true) {
-            navigate(STEP_6)
+            navigate(STEP_5)
         }
     }
 
     return (
         <>
-            <ProgressBar animated now={1} />
             <Alert className='text-center' variant='warning'>
                 <Alert.Heading>
                     А ты и впрям хочешь узнать результат. Чтож, начнем опрос:
