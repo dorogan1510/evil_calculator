@@ -66,3 +66,14 @@ body {
 .operations {
     color: rgb(255, 168, 61);
 }
+
+@media (max-width: 500px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 4rem);
+        grid-template-rows: minmax(8rem, auto) repeat(5, 4rem);
+    }
+
+    .button {
+        font-size: 1.6rem;
+    }
+}

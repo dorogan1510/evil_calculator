@@ -1,5 +1,6 @@
 import AppRouter from './components/AppRouter'
 import { BrowserRouter } from 'react-router-dom'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 export const ACTIONS = {
     ADD_DIGIT: 'add-digit',

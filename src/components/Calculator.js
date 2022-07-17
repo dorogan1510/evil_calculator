@@ -1,9 +1,7 @@
 import React, { useReducer, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import ButtonComponents from './ButtonComponents'
-import { STEP_1 } from '../consts/paths'
 import { ACTIONS } from '../App'
-import Step1EasyCaptcha from '../pages/Step1EasyCaptcha'
+import Step1 from '../pages/Step1'
 
 const reducer = (state, { type, payload }) => {
     switch (type) {
@@ -149,8 +147,6 @@ const formatOperand = operand => {
 }
 
 const Calculator = () => {
-    const navigate = useNavigate()
-
     const [{ currentOperand, previousOperand, operation }, dispatch] =
         useReducer(reducer, {})
 
@@ -194,7 +190,7 @@ const Calculator = () => {
                     =
                 </button>
             </div>
-            <Step1EasyCaptcha
+            <Step1
                 activeCaptcha={activeCaptcha}
                 setActiveCaptcha={setActiveCaptcha}
             />
