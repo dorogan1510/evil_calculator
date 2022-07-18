@@ -11,19 +11,23 @@ body {
 
 .calculator-grid {
     display: grid;
-    margin-top: 0.5rem;
     justify-content: center;
-    grid-template-columns: repeat(4, 5rem);
-    grid-template-rows: minmax(7rem, auto) repeat(5, 5rem);
+    grid-template-columns: repeat(4, 4.5rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 4.5rem);
+
+    margin-top: 0.5rem;
 
     &__output {
-        grid-column: 1 / -1;
-        background-color: rgba(0, 0, 0, 0.75);
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         justify-content: space-around;
+        grid-column: 1 / -1;
+
         padding: 0 0.5rem;
+
+        background-color: rgba(0, 0, 0, 0.75);
+
         word-wrap: break-word;
         word-break: break-all;
 
@@ -44,10 +48,13 @@ body {
 }
 .button {
     cursor: pointer;
+
     font-size: 2rem;
+
     border: 1px solid rgb(255, 255, 255);
-    outline: none;
     background-color: #fff;
+
+    outline: none;
 
     &:hover {
         background-color: rgba(239, 239, 239, 0.9);

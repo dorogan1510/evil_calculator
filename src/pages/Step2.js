@@ -39,7 +39,10 @@ const Step2 = () => {
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={closeButtonHandler}>
+                    <Button
+                        className='d-block mx-auto'
+                        onClick={closeButtonHandler}
+                    >
                         Закрыть и пройти опрос
                     </Button>
                 </Modal.Footer>
@@ -67,6 +70,7 @@ const Step2 = () => {
             <Button
                 className={isButton ? 'd-block mx-auto mt-4' : 'd-none'}
                 variant='primary'
+                size='lg'
                 onClick={() => navigate(STEP_3)}
             >
                 Начать опрос

@@ -2,10 +2,18 @@
     box-sizing: border-box;
 }
 
-body,
+body {
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
 .hangman-root {
-    margin: 0;
-    padding: 1rem;
+    margin-top: 0.5rem;
     height: 90vh;
 
     display: flex;

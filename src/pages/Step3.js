@@ -26,9 +26,9 @@ const Step3 = () => {
         <>
             <Alert className='text-center' variant='warning'>
                 <Alert.Heading>
-                    А ты и впрям хочешь узнать результат. Чтож, начнем опрос:
+                    А ты и впрям хочешь узнать результат
                 </Alert.Heading>
-                <p>Ты умеешь считать в уме?</p>
+                <p>Чтож, начнем опрос: Ты умеешь считать в уме?</p>
             </Alert>
             <Form className='text-center'>
                 <div key={`inline-radio`} className='mb-3'>
