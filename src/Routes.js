@@ -1,5 +1,7 @@
 import {
     CALCULATOR,
+    CALCULATORWORK,
+    HANGMAN,
     STEP_1,
     STEP_10,
     STEP_11,
@@ -33,6 +35,8 @@ import Step12 from './pages/Step12'
 import Step13 from './pages/Step13'
 import Step14 from './pages/Step14'
 import Step15 from './pages/Step15'
+import Hangman from './pages/Hangman'
+import CalculatorWork from './components/CalculatorWork'
 
 export const publicRoutes = [
     { path: CALCULATOR, Component: Calculator },
@@ -95,5 +99,13 @@ export const publicRoutes = [
     {
         path: STEP_15,
         Component: Step15,
+    },
+    {
+        path: HANGMAN,
+        Component: Hangman,
+    },
+    {
+        path: CALCULATORWORK,
+        Component: CalculatorWork,
     },
 ]

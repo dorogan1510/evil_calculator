@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+.hangman-root {
+    margin: 0;
+    padding: 1rem;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #183a5d;
+    color: #fff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+h1 {
+    margin: 20px 0 0;
+}
+
+.game-container {
+    margin: auto;
+    padding: 20px 30px;
+
+    max-height: 350px;
+    max-width: 450px;
+
+    position: relative;
+}
+
+.figure-container {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+.figure-part {
+    display: none;
+}
+
+.wrong-letters-container {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    position: absolute;
+    top: -18%;
+    right: 2%;
+
+    p {
+        margin: 0 0 5px;
+    }
+
+    span {
+        font-size: 24px;
+    }
+}
+
+.word {
+    display: flex;
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 3px;
+    height: 50px;
+    width: 20px;
+
+    border-bottom: 3px solid #2980b9;
+    font-size: 30px;
+}
+
+.popup-container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.popup {
+    padding: 1rem;
+    margin: 1rem;
+
+    text-align: center;
+
+    background: #2980b9;
+    border-radius: 10px;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+
+    button {
+        margin-top: 20px;
+        padding: 12px 20px;
+
+        font-size: 16px;
+
+        cursor: pointer;
+
+        background-color: #fff;
+        color: #2980b9;
+        border: 0;
+        border-radius: 10px;
+
+        &:active {
+            transform: scale(0.98);
+        }
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+.notification-container {
+    padding: 15px 20px;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px 10px 0 0;
+
+    position: absolute;
+    bottom: -70px;
+
+    transition: transform 0.3s ease-in-out;
+
+    p {
+        margin: 0;
+    }
+}
+
+.notification-container.show {
+    transform: translateY(-70px);
+}
