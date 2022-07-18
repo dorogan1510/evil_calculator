@@ -1,7 +1,8 @@
-import React, { useReducer, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import ButtonComponents from './ButtonComponents'
 import { ACTIONS } from '../App'
 import Step1 from '../pages/Step1'
+import { Alert, Button, Modal } from 'react-bootstrap'
 
 const reducer = (state, { type, payload }) => {
     switch (type) {
@@ -150,7 +151,43 @@ const CalculatorWork = () => {
     const [{ currentOperand, previousOperand, operation }, dispatch] =
         useReducer(reducer, {})
 
-    const [activeCaptcha, setActiveCaptcha] = useState(false)
+    const [isAlert, setIsAlert] = useState(false)
+    const [modalShow, setModalShow] = useState(false)
+
+    const buttonClick = () => {
+        if (!isAlert) {
+            dispatch({ type: ACTIONS.EVALUATE })
+            setModalShow(true)
+            setIsAlert(true)
+        } else {
+            dispatch({ type: ACTIONS.EVALUATE })
+        }
+    }
+
+    const MyVerticallyCenteredModal = props => {
+        return (
+            <Modal
+                {...props}
+                size='lg'
+                aria-labelledby='contained-modal-title-vcenter'
+                centered
+            >
+                <Modal.Header closeButton></Modal.Header>
+                <Modal.Body className='text-center'>
+                    <h4>Ну вот, теперь все работает!</h4>
+                    <p>
+                        А ты не такой и ленивый, раз дошел до конца! Попробуй
+                        пройти этот путь еще раз, есть несколько разных
+                        прохождений, заодно разомнешь мозги🧠
+                    </p>
+                    <h3>Удачи!</h3>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={props.onHide}>Закрыть</Button>
+                </Modal.Footer>
+            </Modal>
+        )
+    }
 
     return (
         <>
@@ -177,22 +214,18 @@ const CalculatorWork = () => {
                 </button>
 
                 <ButtonComponents dispatch={dispatch} />
-                {/* <button
-                    className='calculator-grid__span-two equal'
-                    onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
-                >
-                    =
-                </button> */}
+
                 <button
                     className='calculator-grid__span-two equal button'
-                    onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
+                    onClick={buttonClick}
                 >
                     =
                 </button>
             </div>
-            <Step1
-                activeCaptcha={activeCaptcha}
-                setActiveCaptcha={setActiveCaptcha}
+
+            <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
             />
         </>
     )

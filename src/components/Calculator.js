@@ -153,7 +153,7 @@ const Calculator = () => {
     const [activeCaptcha, setActiveCaptcha] = useState(false)
 
     return (
-        <>
+        <div>
             <div className='calculator-grid'>
                 <div className='calculator-grid__output'>
                     <div className='calculator-grid__output_previous-operand'>
@@ -177,12 +177,7 @@ const Calculator = () => {
                 </button>
 
                 <ButtonComponents dispatch={dispatch} />
-                {/* <button
-                className='calculator-grid__span-two equal'
-                onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
-            >
-                =
-            </button> */}
+
                 <button
                     className='calculator-grid__span-two equal button'
                     onClick={() => setActiveCaptcha(true)}
@@ -194,7 +189,7 @@ const Calculator = () => {
                 activeCaptcha={activeCaptcha}
                 setActiveCaptcha={setActiveCaptcha}
             />
-        </>
+        </div>
     )
 }
 

@@ -31,7 +31,7 @@ const Step6 = () => {
                 <div key={`inline-radio`} className='mb-3'>
                     <Form.Check
                         inline
-                        label='Ну. умею'
+                        label='Ну, умею'
                         name='group1'
                         type='radio'
                         id='1'

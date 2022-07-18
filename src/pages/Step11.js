@@ -1,7 +1,11 @@
 import React from 'react'
 import { Alert, Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+import { CALCULATOR } from '../consts/paths'
 
 const Step11 = () => {
+    const navigate = useNavigate()
+
     return (
         <>
             <Alert className='text-center' variant='warning'>
@@ -12,7 +16,11 @@ const Step11 = () => {
             </Alert>
 
             <div className='d-block text-center'>
-                <Button href='https://www.tiktok.com/' target='_blank'>
+                <Button
+                    href='https://www.tiktok.com/'
+                    target='_blank'
+                    onClick={() => navigate(CALCULATOR)}
+                >
                     Подеградировать
                 </Button>
             </div>

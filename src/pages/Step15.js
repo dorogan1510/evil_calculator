@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Alert, Button } from 'react-bootstrap'
 import { Bars } from 'react-loader-spinner'
+import { useNavigate } from 'react-router-dom'
+import { HANGMAN } from '../consts/paths'
 
 const Step15 = () => {
     const [show1, setShow1] = useState(true)
     const [show2, setShow2] = useState(false)
     const [show3, setShow3] = useState(false)
     const [show4, setShow4] = useState(false)
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         setTimeout(() => {
@@ -55,25 +59,25 @@ const Step15 = () => {
                 />
             </div>
 
-            <Alert show={show1} variant='success' className='mt-4'>
+            <Alert show={show1} variant='dark' className='mt-4'>
                 <Alert.Heading className='text-center'>
                     Идет обработка вашего ответа, пожалуйста подождите
                 </Alert.Heading>
             </Alert>
 
-            <Alert show={show2} variant='success' className='mt-4'>
+            <Alert show={show2} variant='dark' className='mt-4'>
                 <Alert.Heading className='text-center'>
                     Еще немного, результат почти готов
                 </Alert.Heading>
             </Alert>
 
-            <Alert show={show3} variant='success' className='mt-4'>
+            <Alert show={show3} variant='dark' className='mt-4'>
                 <Alert.Heading className='text-center'>
                     Может все-таки было проще в столбик самому посчитать?
                 </Alert.Heading>
             </Alert>
 
-            <Alert show={show4} variant='success'>
+            <Alert show={show4} variant='dark'>
                 <Alert.Heading className='text-center'>
                     А я смотрю ты крайне настойчивый человек и времени у тебя
                     свободного полно. Ладно, держи свой ответ
@@ -83,7 +87,8 @@ const Step15 = () => {
                 <div className='d-flex justify-content-end'>
                     <Button
                         className='d-block mx-auto'
-                        variant='outline-success'
+                        variant='dark'
+                        onClick={() => navigate(HANGMAN)}
                     >
                         Ответ
                     </Button>
