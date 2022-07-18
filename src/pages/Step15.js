@@ -58,26 +58,22 @@ const Step15 = () => {
                     ariaLabel='loading-indicator'
                 />
             </div>
-
-            <Alert show={show1} variant='dark' className='mt-4'>
+            <Alert show={show1} variant='warning' className='mt-4'>
                 <Alert.Heading className='text-center'>
                     Идет обработка вашего ответа, пожалуйста подождите
                 </Alert.Heading>
             </Alert>
-
-            <Alert show={show2} variant='dark' className='mt-4'>
+            <Alert show={show2} variant='warning' className='mt-4'>
                 <Alert.Heading className='text-center'>
                     Еще немного, результат почти готов
                 </Alert.Heading>
             </Alert>
-
-            <Alert show={show3} variant='dark' className='mt-4'>
+            <Alert show={show3} variant='warning' className='mt-4'>
                 <Alert.Heading className='text-center'>
                     Может все-таки было проще в столбик самому посчитать?
                 </Alert.Heading>
             </Alert>
-
-            <Alert show={show4} variant='dark'>
+            <Alert show={show4} variant='warning'>
                 <Alert.Heading className='text-center'>
                     А я смотрю ты крайне настойчивый человек и времени у тебя
                     свободного полно. Ладно, держи свой ответ
@@ -87,7 +83,7 @@ const Step15 = () => {
                 <div className='d-flex justify-content-end'>
                     <Button
                         className='d-block mx-auto'
-                        variant='dark'
+                        variant='outline-dark'
                         onClick={() => navigate(HANGMAN)}
                     >
                         Ответ

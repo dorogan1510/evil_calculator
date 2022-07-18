@@ -52,7 +52,7 @@ const Popup = ({
             </Popover.Body>
             <Button
                 className='d-block mx-auto mb-2'
-                variant='success'
+                variant='dark'
                 onClick={buttonClick}
             >
                 Посчитать

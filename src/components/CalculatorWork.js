@@ -183,7 +183,9 @@ const CalculatorWork = () => {
                     <h3>Удачи!</h3>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={props.onHide}>Закрыть</Button>
+                    <Button variant='success' onClick={props.onHide}>
+                        Закрыть
+                    </Button>
                 </Modal.Footer>
             </Modal>
         )
