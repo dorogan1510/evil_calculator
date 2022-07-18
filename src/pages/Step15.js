@@ -1,73 +1,96 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Alert, Button, Offcanvas } from 'react-bootstrap'
-import { STEP_6 } from '../consts/paths'
+import React, { useEffect, useState } from 'react'
+import { Alert, Button } from 'react-bootstrap'
+import { Bars } from 'react-loader-spinner'
 
-const Step5 = () => {
-    const [show, setShow] = useState(false)
-    const [isButton1, setIsButton1] = useState(false)
-    const [isButton2, setIsButton2] = useState(true)
+const Step15 = () => {
+    const [show1, setShow1] = useState(true)
+    const [show2, setShow2] = useState(false)
+    const [show3, setShow3] = useState(false)
+    const [show4, setShow4] = useState(false)
 
-    const navigate = useNavigate()
+    useEffect(() => {
+        setTimeout(() => {
+            setShow1(false)
+        }, 4000)
+    }, [])
 
-    const handleClose = () => setShow(false)
-    const handleShow = () => {
-        setShow(true)
-        setIsButton1(true)
-        setIsButton2(false)
-    }
+    useEffect(() => {
+        setTimeout(() => {
+            setShow2(true)
+        }, 4500)
+    }, [])
 
-    function OffCanvasExample({ name, ...props }) {
-        return (
-            <>
-                <Offcanvas show={show} onHide={handleClose} {...props}>
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>Сookie</Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                        Мы используем cookie-файлы, чтобы получить статистику,
-                        которая помогает нам улучшить сервис для Вас с целью
-                        персонализации сервисов и предложений. Вы можете
-                        прочитать подробнее о cookie-файлах или изменить
-                        настройки браузера. Интересно, кто-то вообще читает эти
-                        подробности о куки файлах?
-                    </Offcanvas.Body>
-                </Offcanvas>
-            </>
-        )
-    }
+    useEffect(() => {
+        setTimeout(() => {
+            setShow2(false)
+        }, 9500)
+    }, [])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShow3(true)
+        }, 10000)
+    }, [])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShow3(false)
+        }, 15000)
+    }, [])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShow4(true)
+        }, 15500)
+    }, [])
 
     return (
         <>
-            <Alert className='text-center' variant='warning'>
-                <Alert.Heading>
-                    Ладно, твоя взяла. Кликай и смотри свой ответ
+            <div className='d-flex justify-content-center mt-4'>
+                <Bars
+                    heigth='100'
+                    width='100'
+                    color='#ab35db'
+                    ariaLabel='loading-indicator'
+                />
+            </div>
+
+            <Alert show={show1} variant='success' className='mt-4'>
+                <Alert.Heading className='text-center'>
+                    Идет обработка вашего ответа, пожалуйста подождите
                 </Alert.Heading>
             </Alert>
 
-            <Button
-                className={isButton2 ? 'd-block mx-auto' : 'd-none'}
-                variant='primary'
-                onClick={handleShow}
-            >
-                Посмотреть ответ
-            </Button>
-            <Button
-                className={isButton1 ? 'd-block mx-auto' : 'd-none'}
-                variant='primary'
-                onClick={() => navigate(STEP_6)}
-            >
-                Узнать ответ
-            </Button>
-            {['bottom'].map((placement, idx) => (
-                <OffCanvasExample
-                    key={idx}
-                    placement={placement}
-                    name={placement}
-                />
-            ))}
+            <Alert show={show2} variant='success' className='mt-4'>
+                <Alert.Heading className='text-center'>
+                    Еще немного, результат почти готов
+                </Alert.Heading>
+            </Alert>
+
+            <Alert show={show3} variant='success' className='mt-4'>
+                <Alert.Heading className='text-center'>
+                    Может все-таки было проще в столбик самому посчитать?
+                </Alert.Heading>
+            </Alert>
+
+            <Alert show={show4} variant='success'>
+                <Alert.Heading className='text-center'>
+                    А я смотрю ты крайне настойчивый человек и времени у тебя
+                    свободного полно. Ладно, держи свой ответ
+                </Alert.Heading>
+
+                <hr />
+                <div className='d-flex justify-content-end'>
+                    <Button
+                        className='d-block mx-auto'
+                        variant='outline-success'
+                    >
+                        Ответ
+                    </Button>
+                </div>
+            </Alert>
         </>
     )
 }
 
-export default Step5
+export default Step15

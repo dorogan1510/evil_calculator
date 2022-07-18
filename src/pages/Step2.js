@@ -50,7 +50,9 @@ const Step2 = () => {
     return (
         <>
             <Alert
-                className='mb-2 d-flex justify-content-center'
+                className={
+                    isLoading ? 'mb-2 d-flex justify-content-center' : 'd-none'
+                }
                 variant='danger'
             >
                 Ваш запрос обрабатывается
@@ -63,7 +65,7 @@ const Step2 = () => {
                 <Circles color='#00BFFF' height={80} width={80} />
             </div>
             <Button
-                className={isButton ? 'd-block mx-auto' : 'd-none'}
+                className={isButton ? 'd-block mx-auto mt-4' : 'd-none'}
                 variant='primary'
                 onClick={() => navigate(STEP_3)}
             >

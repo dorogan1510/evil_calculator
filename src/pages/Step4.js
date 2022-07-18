@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Form, Alert, Button } from 'react-bootstrap'
-import { STEP_4, STEP_5 } from '../consts/paths'
+import { STEP_11, STEP_12, STEP_5 } from '../consts/paths'
 
 const Step4 = () => {
     const navigate = useNavigate()
@@ -12,10 +12,10 @@ const Step4 = () => {
 
     const nextPage = () => {
         if (ref1.current.checked === true) {
-            navigate(STEP_4)
+            navigate(STEP_12)
         }
         if (ref2.current.checked === true) {
-            navigate(STEP_4)
+            navigate(STEP_11)
         }
         if (ref3.current.checked === true) {
             navigate(STEP_5)

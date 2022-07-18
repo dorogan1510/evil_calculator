@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Form, Alert, Button } from 'react-bootstrap'
-import { STEP_13, STEP_14, STEP_6 } from '../consts/paths'
+import { STEP_12, STEP_13, STEP_6 } from '../consts/paths'
 
-const Step5 = () => {
+const Step8 = () => {
     const navigate = useNavigate()
 
     const ref1 = useRef()
@@ -15,10 +15,10 @@ const Step5 = () => {
             navigate(STEP_6)
         }
         if (ref2.current.checked === true) {
-            navigate(STEP_13)
+            navigate(STEP_12)
         }
         if (ref3.current.checked === true) {
-            navigate(STEP_14)
+            navigate(STEP_13)
         }
     }
 
@@ -69,4 +69,4 @@ const Step5 = () => {
     )
 }
 
-export default Step5
+export default Step8
