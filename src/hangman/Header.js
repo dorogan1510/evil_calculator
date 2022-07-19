@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <div className='m-3 text-center'>
+        <div className='mt-2 p-2 pb-0 text-center header'>
             <h1>Виселица</h1>
             <p>
                 Думал, я так просто тебе скажу ответ?😈 <br />

@@ -70,7 +70,7 @@ const Popup = ({
                 {ref ? (
                     <OverlayTrigger
                         trigger='click'
-                        placement='right'
+                        placement='bottom'
                         overlay={popover}
                     >
                         <button>{finalButtonMessage}</button>

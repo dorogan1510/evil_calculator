@@ -9,7 +9,7 @@ const ButtonComponents = ({ dispatch }) => {
             <DigitButton digit='1' dispatch={dispatch} />
             <DigitButton digit='2' dispatch={dispatch} />
             <DigitButton digit='3' dispatch={dispatch} />
-            <OperationButton operation='*' dispatch={dispatch} />
+            <OperationButton operation='×' dispatch={dispatch} />
             <DigitButton digit='4' dispatch={dispatch} />
             <DigitButton digit='5' dispatch={dispatch} />
             <DigitButton digit='6' dispatch={dispatch} />
