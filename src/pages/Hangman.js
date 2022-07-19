@@ -7,7 +7,6 @@ import Popup from '../hangman/Popup'
 import Notification from '../hangman/Notification'
 import { showNotification as show } from '../hangman/helpers/helpers'
 import './Hangman.scss'
-import { Button } from 'react-bootstrap'
 
 const words = ['математика', 'деградация']
 let selectedWord = words[Math.floor(Math.random() * words.length)]
@@ -48,32 +47,6 @@ const Hangman = () => {
 
         return () => window.removeEventListener('keydown', handleKeydown)
     }, [correctLetters, wrongLetters, playable])
-
-    const handleKeydown = event => {
-        const { key, keyCode } = event
-        if (playable && keyCode >= 65 && keyCode <= 90) {
-            const letter = key.toLowerCase()
-            if (selectedWord.includes(letter)) {
-                if (!correctLetters.includes(letter)) {
-                    setCorrectLetters(currentLetters => [
-                        ...currentLetters,
-                        letter,
-                    ])
-                } else {
-                    show(setShowNotification)
-                }
-            } else {
-                if (!wrongLetters.includes(letter)) {
-                    setWrongLetters(currentLetters => [
-                        ...currentLetters,
-                        letter,
-                    ])
-                } else {
-                    show(setShowNotification)
-                }
-            }
-        }
-    }
 
     const buttonLetter = e => {
         let letter = e.target.value
